@@ -563,16 +563,16 @@ chaincoin_menu() {
         echo "===================================================="
         echo "*                     Chaincoin                    *"
         echo "===================================================="
-        echo "1.  AMD - Chaincoin to Suprnova.cc"
-        echo "1.  Nvidia - Chaincoin to Suprnova.cc"
+        echo "x.  AMD - Chaincoin to Suprnova.cc - AMD Not Supported Yet"
+        echo "2.  Nvidia - Chaincoin to Suprnova.cc"
 
         read -p "Enter choice [ 1 - 2 ] " choice
     fi
 
     case $choice in
-        1)
-            echo "Ubiq: AMD and NVIDIA Claymore - Ubiq to UbiqPool Only"
-            $CLAYMORE_DUAL_ETHEREUM -epool stratum+tcp://eu.ubiqpool.io:8008 -ewal $UBIQ_WALLET_ADDRESS -epsw x -eworker $MINER_NAME -allpools 1 -allcoins 1 -mode 1 
+        2)
+            echo "Chaincoin: NVIDIA CCMiner - supernova.cc"
+            $CCMINER -o stratum+tcp://chc.suprnova.cc:5888 -a qubit -u $MINER_WEBLOGIN.$MINER_NAME -p $MINER_PASSWORD    
         ;;         
         *)
             _light_red "$(_error "No such option")"
@@ -597,7 +597,7 @@ digibyte_menu() {
 
     case $choice in
         1)
-            echo "Ubiq: AMD and NVIDIA Claymore - Ubiq to UbiqPool Only"
+            echo "Digibyte: NVIDA CCMiner - dgbq to suprnova.cc"
             $CCMINER -o stratum+tcp://dgbq.suprnova.cc:8531 -a qubit -u $MINER_WEBLOGIN.$MINER_NAME -p $MINER_PASSWORD    #-ewal $UBIQ_WALLET_ADDRESS -epsw x -eworker $MINER_NAME -allpools 1 -allcoins 1 -mode 1 
         ;;         
         *)
