@@ -517,7 +517,7 @@ ubiq_menu() {
         ;;
         5)
             echo "Ubiq: AMD and NVIDIA Claymore - Ubiq to Hodl Pool and Siacoin to Nanopool"
-            $CLAYMORE_DUAL_ETHEREUM -epool stratum+tcp://dbix.hodlpool.com:8007 -ewal $UBIQ_WALLET_ADDRESS -epsw x -eworker $MINER_NAME -dpool stratum+tcp://sia-us-east1.nanopool.org:7777 -dwal $SIA_WALLET_ADDRESS/$MINER_NAME/$EMAIL_ADDRESS -dcoin sia -allpools 1
+            $CLAYMORE_DUAL_ETHEREUM -epool stratum+tcp://ubiq.hodlpool.com:8009 -ewal $UBIQ_WALLET_ADDRESS -epsw x -eworker $MINER_NAME -dpool stratum+tcp://sia-us-east1.nanopool.org:7777 -dwal $SIA_WALLET_ADDRESS/$MINER_NAME/$EMAIL_ADDRESS -dcoin sia -allpools 1
         ;;
         6)
             echo "Ubiq: AMD and NVIDIA Claymore - Ubiq to Sexy.Pool and Siacoin to Nanopool"
@@ -555,7 +555,7 @@ expanse_menu() {
     exit 0
 }
 
-ubiq_menu4() {
+chaincoin_menu() {
     local choice=$1
 
     if [ -z $choice ]; then
@@ -581,7 +581,7 @@ ubiq_menu4() {
     exit 0
 }
 
-ubiq_menu3() {
+digibyte_menu() {
     local choice=$1
 
     if [ -z $choice ]; then
@@ -589,7 +589,7 @@ ubiq_menu3() {
         echo "===================================================="
         echo "*                     Digibyte                     *"
         echo "===================================================="
-        echo "1.  AMD - Digibyte to Suprnova.cc"
+        echo "x.  AMD - Digibyte to Suprnova.cc - AMD Not Supported Yet"
         echo "1.  Nvidia - Digibyte to Suprnova.cc"
 
         read -p "Enter choice [ 1 - 2 ] " choice
@@ -598,7 +598,7 @@ ubiq_menu3() {
     case $choice in
         1)
             echo "Ubiq: AMD and NVIDIA Claymore - Ubiq to UbiqPool Only"
-            $CLAYMORE_DUAL_ETHEREUM -epool stratum+tcp://eu.ubiqpool.io:8008 -ewal $UBIQ_WALLET_ADDRESS -epsw x -eworker $MINER_NAME -allpools 1 -allcoins 1 -mode 1 
+            $CCMINER -o stratum+tcp://dgbq.suprnova.cc:8531 -a qubit -u nighthawk28.test -p x    #-ewal $UBIQ_WALLET_ADDRESS -epsw x -eworker $MINER_NAME -allpools 1 -allcoins 1 -mode 1 
         ;;         
         *)
             _light_red "$(_error "No such option")"
@@ -607,7 +607,7 @@ ubiq_menu3() {
     exit 0
 }
 
-ubiq_menu2() {
+feathercoin_menu() {
     local choice=$1
 
     if [ -z $choice ]; then
@@ -615,45 +615,21 @@ ubiq_menu2() {
         echo "===================================================="
         echo "*                    Feathercoin                   *"
         echo "===================================================="
-        echo "1.  Nvidia - Feathercoin to F2Pool"
+        echo "   F2Pool does not support feathercoin."
+#        echo "1.  Nvidia - Feathercoin to F2Pool"
 
-        read -p "Enter choice [ 1 - 1 ] " choice
+#        read -p "Enter choice [ 1 - 1 ] " choice
     fi
 
-    case $choice in
-        1)
-            echo "Ubiq: AMD and NVIDIA Claymore - Ubiq to UbiqPool Only"
-            $CLAYMORE_DUAL_ETHEREUM -epool stratum+tcp://eu.ubiqpool.io:8008 -ewal $UBIQ_WALLET_ADDRESS -epsw x -eworker $MINER_NAME -allpools 1 -allcoins 1 -mode 1 
-        ;;         
-        *)
-            _light_red "$(_error "No such option")"
-        ;;
-    esac
-    exit 0
-}
-
-ubiq_menu1() {
-    local choice=$1
-
-    if [ -z $choice ]; then
-        clear
-        echo "===================================================="
-        echo "*                       Ubiq                       *"
-        echo "===================================================="
-        echo "1.  AMD and NVIDIA Claymore - Ubiq to UbiqPool Only"
-
-        read -p "Enter choice [ 1 - 6 ] " choice
-    fi
-
-    case $choice in
-        1)
-            echo "Ubiq: AMD and NVIDIA Claymore - Ubiq to UbiqPool Only"
-            $CLAYMORE_DUAL_ETHEREUM -epool stratum+tcp://eu.ubiqpool.io:8008 -ewal $UBIQ_WALLET_ADDRESS -epsw x -eworker $MINER_NAME -allpools 1 -allcoins 1 -mode 1 
-        ;;         
-        *)
-            _light_red "$(_error "No such option")"
-        ;;
-    esac
+#    case $choice in
+#        1)
+#            echo "Ubiq: AMD and NVIDIA Claymore - Ubiq to UbiqPool Only"
+#            $CLAYMORE_DUAL_ETHEREUM -epool stratum+tcp://eu.ubiqpool.io:8008 -ewal $UBIQ_WALLET_ADDRESS -epsw x -eworker $MINER_NAME -allpools 1 -allcoins 1 -mode 1 
+#        ;;         
+#        *)
+#            _light_red "$(_error "No such option")"
+#        ;;
+#    esac
     exit 0
 }
 
