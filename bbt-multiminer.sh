@@ -572,7 +572,7 @@ chaincoin_menu() {
     case $choice in
         2)
             echo "Chaincoin: NVIDIA CCMiner - supernova.cc"
-            $CCMINER -o stratum+tcp://chc.suprnova.cc:5888 -a qubit -u $MINER_WEBLOGIN.$MINER_NAME -p $MINER_PASSWORD    
+            $CCMINER -o stratum+tcp://chc.suprnova.cc:5888 -a c11 -u $MINER_WEBLOGIN.$MINER_NAME -p $MINER_PASSWORD    
         ;;         
         *)
             _light_red "$(_error "No such option")"
