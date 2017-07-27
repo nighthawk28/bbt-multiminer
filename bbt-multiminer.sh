@@ -24,10 +24,10 @@
 source ./wallets.sh
 
 # suprnova.cc pool login
-readonly MINER_WEBLOGIN=bitsbetrippin
-readonly MINER_PASSWORD=x
+readonly MINER_WEBLOGIN=nighthawk28
+readonly MINER_PASSWORD=password
 
-readonly MINER_NAME=bbtworker01
+readonly MINER_NAME=worker1
 
 readonly EMAIL_ADDRESS=bitsbetrippin1@gmail.com
 
@@ -598,7 +598,7 @@ digibyte_menu() {
     case $choice in
         1)
             echo "Ubiq: AMD and NVIDIA Claymore - Ubiq to UbiqPool Only"
-            $CCMINER -o stratum+tcp://dgbq.suprnova.cc:8531 -a qubit -u nighthawk28.test -p x    #-ewal $UBIQ_WALLET_ADDRESS -epsw x -eworker $MINER_NAME -allpools 1 -allcoins 1 -mode 1 
+            $CCMINER -o stratum+tcp://dgbq.suprnova.cc:8531 -a qubit -u $MINER_WEBLOGIN.$MINER_NAME -p $MINER_PASSWORD    #-ewal $UBIQ_WALLET_ADDRESS -epsw x -eworker $MINER_NAME -allpools 1 -allcoins 1 -mode 1 
         ;;         
         *)
             _light_red "$(_error "No such option")"
